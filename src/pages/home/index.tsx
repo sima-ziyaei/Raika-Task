@@ -1,9 +1,18 @@
+import { FC } from "react";
 import Button from "../../components/Button";
 
-const Home = () => {
+interface Props {
+    ref: React.RefObject<HTMLInputElement>
+}
+
+const Home: FC<Props> = ({ ref }) => {
+    const handleClick = () => {
+        ref.current.scrollIntoView({ behavior: 'smooth' });;
+    };
+
     return <section className="">
         <div className="flex justify-between">
-            <img src="/assets/images/Left Image.png" className="w-[640px] h-fit" />
+            <img src="/assets/images/Left Image.png" className="w-[640px] h-fit mt-[-5%]" />
 
             <div className="relative">
                 <img src="/assets/images/logo.svg" className="w-[460px] h-fit absolute mx-auto left-0 right-0 -top-20 " />
@@ -23,12 +32,12 @@ const Home = () => {
         </div>
 
 
-        <div className="flex flex-col items-center mt-24">
+        <div onClick={handleClick} className="flex flex-col items-center mt-24 cursor-pointer mb-40">
             <img src="/assets/icons/mouse.svg" />
             <p className="text-purple mt-5 text-xl"> اسکرول کنید </p>
         </div>
 
-        
+        <div  ref={ref}>sdfdgcvbxbxb</div>
     </section>
 }
 
