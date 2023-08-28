@@ -5,7 +5,7 @@ import Button from '../components/Button';
 const Navbar: FC = () => {
     return (
         <nav className='bg-transparent'>
-            <div className=' flex gap-10 flex-row-reverse items-baseline mb-16'>
+            <div className=' flex z-20 gap-10 flex-row-reverse items-baseline mb-52'>
 
            
             <NavLink to={`/login`} >

@@ -1,29 +1,31 @@
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { signinSchema } from "../../utilities/schemas";
+import { signupSchema } from "../../utilities/schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useNavigate } from "react-router-dom";
+import Button from "../../components/Button";
 
-type SigninSchema = z.infer<typeof signinSchema>;
+type SignUpSchema = z.infer<typeof signupSchema>;
 
-const SignIn = () => {
+const SignUp = () => {
   const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<SigninSchema>({
-    resolver: zodResolver(signinSchema),
+  } = useForm<SignUpSchema>({
+    resolver: zodResolver(signupSchema),
     // defaultValues: {},
     mode: "onChange",
   });
-  function handleSubmitForm(data: SigninSchema) {
+  function handleSubmitForm(data: SignUpSchema) {
     navigate("/");
-    console.log(data);
     reset({
       username: "",
       password: "",
+      confirmPassword: "",
+      email: "",
     });
   }
   return (
@@ -46,6 +48,19 @@ const SignIn = () => {
       <div>
         <label></label>
         <input
+          {...register("email")}
+          className="w-80 h-10 rounded-md p-2"
+        />
+        {errors.email && (
+          <p className="text-orange-400 text-xs w-80 text-right pr-2 pt-1">
+            {errors.email.message}
+          </p>
+        )}
+      </div>
+      <div>
+        <label></label>
+        <input
+          type="password"
           {...register("password")}
           className="w-80 h-10 rounded-md p-2"
         />
@@ -55,11 +70,24 @@ const SignIn = () => {
           </p>
         )}
       </div>
-      <button className="w-80 h-8 rounded-2xl bg-[#9C50FB]">
-        ورود به حساب
-      </button>
+      <div>
+        <label></label>
+        <input
+          type="password"
+          {...register("confirmPassword")}
+          className="w-80 h-10 rounded-md p-2"
+        />
+        {errors.confirmPassword && (
+          <p className="text-orange-400 text-xs w-80 text-right pr-2 pt-1">
+            {errors.confirmPassword.message}
+          </p>
+        )}
+      </div>
+      <Button className="w-80 h-8 rounded-2xl bg-[#9C50FB]">
+       <p> ساخت حساب جدید </p> 
+      </Button>
     </form>
   );
 };
 
-export default SignIn;
+export default SignUp;
