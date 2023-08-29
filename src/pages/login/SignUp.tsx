@@ -17,7 +17,7 @@ const SignUp = () => {
     resolver: zodResolver(signupSchema),
     mode: "onChange",
   });
-  function handleSubmitForm(data: SignUpSchema) {
+  function handleSubmitForm(_data: SignUpSchema) {
     navigate("/");
     reset({
       username: "",
