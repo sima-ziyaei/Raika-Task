@@ -55,6 +55,7 @@ const SignIn = () => {
         <div className="relative w-full">
           <input
             {...register("password")}
+            type="password"
             className="w-full h-10 p-7 peer pl-14 mb-6 bg-transparent border-[1.5px] border-solid border-[#2f3341] focus:border-2 focus:border-white rounded-[22px]"
             placeholder=" کلمه عبور "
           />

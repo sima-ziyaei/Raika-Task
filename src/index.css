@@ -3,14 +3,18 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'google';
-  src: url('/public/A-Google/A-Google.ttf');
+  font-family: "google";
+  src: url("/public/A-Google/A-Google.ttf");
+}
+
+* {
+  box-sizing: border-box;
 }
 
 :root {
   line-height: 1.5;
   font-weight: 400;
-  font-family: 'google';
+  font-family: "google";
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
@@ -31,6 +35,6 @@ body {
   min-width: 320px;
   min-height: 100vh;
   height: auto;
-  background-color: #070E1C;
+  background-color: #070e1c;
   overflow-x: hidden;
 }
