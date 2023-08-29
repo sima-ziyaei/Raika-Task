@@ -3,7 +3,6 @@ import { z } from "zod";
 import { signupSchema } from "../../utilities/schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useNavigate } from "react-router-dom";
-import Button from "../../components/Button";
 
 type SignUpSchema = z.infer<typeof signupSchema>;
 
@@ -16,7 +15,6 @@ const SignUp = () => {
     formState: { errors },
   } = useForm<SignUpSchema>({
     resolver: zodResolver(signupSchema),
-    // defaultValues: {},
     mode: "onChange",
   });
   function handleSubmitForm(data: SignUpSchema) {
@@ -37,7 +35,7 @@ const SignUp = () => {
 
 
         <img className="mb-[30px]" src="/assets/icons/logo.svg" />
-        <p className="mb-12"> ساخت حساب </p>
+        <p className="mb-12 text-[63px] "> ساخت حساب </p>
         <div className="w-full flex gap-6">
           <div className="relative w-[45%]">
             <input

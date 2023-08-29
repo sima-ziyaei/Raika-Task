@@ -36,7 +36,7 @@ const SignIn = () => {
 
 
         <img className="mb-[30px]" src="/assets/icons/logo.svg" />
-        <p className="mb-12"> ورود به حساب </p>
+        <p className="mb-12 text-[63px] "> ورود به حساب </p>
         <div className="relative w-full">
           <input
             {...register("username")}

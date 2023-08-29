@@ -5,9 +5,10 @@ import SignIn from "../pages/login/SignIn";
 import Download from "../pages/Download";
 import SignUp from "../pages/login/SignUp";
 import { useRef } from "react";
+import Game from "../pages/Game";
 
 const AppRoutes = () => {
-  const ref: React.RefObject<HTMLInputElement> = useRef();
+  const ref = useRef<HTMLDivElement>(null);
   return (
     <BrowserRouter>
       <Routes>
@@ -16,6 +17,7 @@ const AppRoutes = () => {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/games" />
+          <Route path="/games/:id" element={<Game/>} />
           <Route path="/instruction" />
           <Route path="/download" element={<Download />} />
         </Route>
