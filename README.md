@@ -3,7 +3,6 @@
 
 1. `npm install`
 2. `npm run dev`
-   
 
 ![](file:///home/sima/Pictures/Screenshots/Screenshot%20from%202023-08-29%2023-13-12.png)
 
