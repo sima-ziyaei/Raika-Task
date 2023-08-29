@@ -1,5 +1,5 @@
 # Raika Task
-# React + TypeScript + Vite
+## React + TypeScript + Vite
 
 1. `npm install`
 2. `npm run dev`
