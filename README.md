@@ -4,7 +4,6 @@
 1. `npm install`
 2. `npm run dev`
 
-
 ![photo_6012797972535951027_y](https://github.com/MohammadSobhanSaffary/React-Test/assets/96923486/d6252237-d9da-473a-a8f9-5dbcaaeca521)
 
 
